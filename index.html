@@ -13,19 +13,35 @@
     <nav class="header">
         <div class="card-body justify-content-end">
             <a href="#" id="score">View High Scores</a>
-            <a id="timer">Timer Goes Here</a>
+            <a id="timer"></a>
         </div>
     </nav>  
     
     <main class="container">
 
-        <div id="quizChallengePage">
+        <!--Quiz Home Page-->
+        <div id="quizHomePage">
             <h1 id="start">Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Every incorrect answers will penalize your score/time by ten seconds!"</p>
             <div id="button">   
                 <button id="submitButton" class ="btn active" type="button">Start Quiz</button>
             </div>
         </div>
+
+        <!--Questions -->
+        <div id="quizQuestionsPage">
+            <h2 id="quizQuestionHeader"></h2>
+            <ul>
+                <li><button type="button" class="btn questionButton" id="one"></button></li>
+                <li><button type="button" class="btn questionButton" id="two"></button></li>
+                <li><button type="button" class="btn questionButton" id="three"></button></li>
+                <li><button type="button" class="btn questionButton" id="four"></button></li>
+            </ul>
+                
+            <!--Corrent/Incorrent answer response -->
+            <div id="answerResponse"></div>
+        </div>
+
 
 </body>
 </html>
