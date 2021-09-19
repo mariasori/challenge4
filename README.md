@@ -1,2 +1,2 @@
-# challenge4
+# Challenge 4
 Coding Quiz
