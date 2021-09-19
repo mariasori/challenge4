@@ -26,7 +26,6 @@ p {
 button {
     text-align: center !important;
     background-color: purple !important;
-    border-color: purple !important;
     color: white !important;
     font-size: 22px !important;
     padding: 0px 12px 0px 12px !important;
@@ -52,3 +51,39 @@ button {
     float: right;
     padding-right: 30px; 
  }
+
+/* quiz question page */
+
+.quizChallengePage {
+    align-items: center !important;
+    text-align: center !important; 
+}
+
+#quizQuestionHeader {
+    font-size: 25px;
+    font-weight: bolder; 
+    padding-top: 100px;
+    padding-left: 15%; 
+    padding-bottom: 15px; 
+}
+
+li {
+    list-style-type: none;
+    padding-left: 15%; 
+}
+
+.questionButton {
+    text-align: center !important;
+    background-color: purple !important;
+    color: white !important;
+    font-size: 22px !important;
+    padding: 0px 12px 0px 12px !important;
+    margin: 5px; 
+}
+
+#answerResponse {
+    font-style: italic;
+    color: grey;
+    padding-left: 15%;
+    font-size: 30px;
+}
