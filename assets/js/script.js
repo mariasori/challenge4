@@ -15,6 +15,14 @@ var answerResponse = document.getElementById("answerResponse");
 
 var timer = document.getElementById("timer");
 
+var finalScorePage = document.getElementById("finalScorePage");
+var allDone = document.getElementById("allDone");
+var finalScoreIs = document.getElementById("finalScoreIs");
+var initials = document.getElementById("initials"); 
+var initialInput = document.getElementById("initialInput"); 
+var initialButton = document.getElementById("initialButton"); 
+
+
 
 var questionIndex = 0;
 var quizQuestions = [
@@ -60,6 +68,7 @@ function codeQuizChallenge() {
   quizHomePage.style.display = "block"; 
   header.style.display = "block"; 
   quizQuestionsPage.style.display = "none"; 
+  finalScorePage.style.display = "none"; 
 
   var startScore = 0;
   timer.textContent = "Time: " + startScore; 
@@ -76,8 +85,9 @@ function startQuiz() {
   var timerInterval = setInterval(function() { 
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
-    if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
+    if (secondsLeft === 0 || questionIndex > 5) { /*|| quizQuestions.length === questionIndex) {*/
       clearInterval(timerInterval);
+      showFinalScore();
     }
   }, 1000);
 }
@@ -132,16 +142,30 @@ function checkAnswer(event) {
       }
   }
   if (quizQuestions.length === questionIndex+1) {
-        return; 
+    showFinalScore(); 
+    return; 
   }
   questionIndex++;
   showQuestions();
 }
 
+function showFinalScore() {
+  quizQuestionsPage.style.display = "none";
+  finalScorePage.style.display = "block";
+  finalScoreIs.style.display = "block";
+  initials.style.display = "block" ;
+  initialButton.style.display = "block";
+  initialInput.style.display = "block" ;
+
+    finalScoreIs.textContent = "Your final score is " + secondsLeft;
+    initialButton.textContent = "Submit";
+    initials.textContent = "Enter Your Initials: "; 
+} 
+
+
 
 submitButton.addEventListener("click", function() { 
   startQuiz()
-  console.log("start")
 })
 
 codeQuizChallenge(); 

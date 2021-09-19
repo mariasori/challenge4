@@ -34,7 +34,6 @@ button {
 .btn:hover {
     text-align: center !important;
     background-color: violet  !important;
-    border-color: violet !important;
     color: white !important;
     font-size: 22px !important;
     padding: 0px 12px 0px 12px !important;
@@ -59,7 +58,7 @@ button {
     text-align: center !important; 
 }
 
-#quizQuestionHeader {
+#quizQuestionHeader, #allDone {
     font-size: 25px;
     font-weight: bolder; 
     padding-top: 100px;
@@ -86,4 +85,15 @@ li {
     color: grey;
     padding-left: 15%;
     font-size: 30px;
+}
+
+#finalScoreIs {
+    padding-left: 15% !important;
+    font-size: 20px;
+}
+
+#enterInitials {
+    padding-left: 15% !important;
+    font-size: 20px;
+    font-style: bold;
 }
