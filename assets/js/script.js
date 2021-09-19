@@ -81,20 +81,11 @@ function codeQuizChallenge() {
   finalScorePage.style.display = "none"; 
   highScorePage.style.display = "none";
 
-  timer.textContent = "Time: 0" ; 
+  var startScore = 0;
+  timer.textContent = "Time: " + startScore;; 
 }
 
-/* timer interval */
-var secondsLeft = 75; 
 
-var timerInterval = setInterval(function() { 
-  secondsLeft--;
-  timer.textContent = "Time: " + secondsLeft;
-  if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
-    clearInterval(timerInterval);
-    showFinalScore();
-  }
-}, 1000);
 
 
 /* start quiz function */
@@ -105,7 +96,17 @@ function startQuiz() {
   finalScorePage.style.display = "none";
   highScorePage.style.display = "none";
   
-  timer.textContent = "Time: " + secondsLeft;
+  /* timer interval */
+  secondsLeft = 75; 
+
+  timerInterval = setInterval(function() { 
+    secondsLeft--;
+    timer.textContent = "Time: " + secondsLeft;
+    if (secondsLeft === 0 || quizQuestions.length === questionIndex) {
+      clearInterval(timerInterval);
+      showFinalScore();
+    }
+  }, 1000);
 }
 
 /* showing questions and checking answers */
@@ -160,7 +161,6 @@ function checkAnswer(event) {
   }
   if (quizQuestions.length === questionIndex+1) {
     showFinalScore(); 
-    clearInterval(timerInterval);
     timer.innerText = "Time: " + secondsLeft;
     return; 
   }
@@ -182,6 +182,8 @@ function showFinalScore() {
     finalScoreIs.textContent = "Your final score is " + secondsLeft;
     saveButton.textContent = "Save";
     initials.textContent = "Enter Your Initials: "; 
+
+  clearInterval(timerInterval);
     
 } 
 
@@ -211,19 +213,21 @@ function showHighScores() {
 
 }
 
-/* resets variables and timer after going back */
 function resetVariables() {
-  secondsLeft = 75;
   questionIndex = 0;
 }
 
-/* event listeners*/
+/* event listeners*/ 
 startButton.addEventListener("click", function() { 
   startQuiz()
 })
 
 saveButton.addEventListener("click", function() {
   showHighScores();
+  header.style.display = "none"; 
+  quizQuestionsPage.style.display = "none";
+  finalScorePage.style.display = "none";
+  highScorePage.style.display = "block";
   clearInterval(timerInterval);
 })
 
@@ -240,13 +244,10 @@ clearHighScore.addEventListener("click", function() {
 })
 
 viewHighScores.addEventListener("click", function() {
+  header.style.display = "none"; 
   quizHomePage.style.display = "none";
   quizQuestionsPage.style.display = "none";
   finalScorePage.style.display = "none";
-  finalScoreIs.style.display = "none";
-  initials.style.display = "none" ;
-  saveButton.style.display = "none";
-  initialInput.style.display = "none" ;
   highScorePage.style.display = "block";
 
   showHighScores();
