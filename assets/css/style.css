@@ -52,23 +52,25 @@ button {
  }
 
 /* quiz question page */
+#quizQuestionsPage, #finalScorePage, #highScorePage {
+    margin: auto;
+    padding-left: 15%;
+}
 
 .quizChallengePage {
     align-items: center !important;
     text-align: center !important; 
 }
 
-#quizQuestionHeader, #allDone {
+#quizQuestionHeader, #allDone, #highScores {
     font-size: 25px;
     font-weight: bolder; 
     padding-top: 100px;
-    padding-left: 15%; 
     padding-bottom: 15px; 
 }
 
 li {
     list-style-type: none;
-    padding-left: 15%; 
 }
 
 .questionButton {
@@ -83,17 +85,30 @@ li {
 #answerResponse {
     font-style: italic;
     color: grey;
-    padding-left: 15%;
     font-size: 30px;
+    border-top: grey solid;
 }
 
 #finalScoreIs {
-    padding-left: 15% !important;
     font-size: 20px;
 }
 
 #enterInitials {
-    padding-left: 15% !important;
     font-size: 20px;
-    font-style: bold;
+    font-weight: bold;
+}
+
+#initialInput {
+    margin-right: 10px;
+}
+
+#listItemEl {
+    text-align: left;
+    background-color:violet;
+    margin: 10px 0px;
+    padding: 10px; 
+}
+
+#highScoreList {
+    padding: 0px;
 }
