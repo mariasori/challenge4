@@ -26,6 +26,9 @@ var highScorePage = document.getElementById("highScorePage");
 var scoreInitials = document.getElementById("scoreIntials");
 var highScoreList = document.getElementById("highScoreList");
 
+var goBackButton = document.getElementById("goBackButton");
+var clearHighScore = document.getElementById("clearHighScore");
+
 var highScoreArray = [];
 
 var questionIndex = 0;
@@ -193,13 +196,32 @@ function saveScore() {
 
 }
 
+function resetVariables() {
+  startScore = 0; 
+  questionIndex = 0;
+}
+
+
 startButton.addEventListener("click", function() { 
   startQuiz()
 })
 
 saveButton.addEventListener("click", function() {
   saveScore();
-  console.log("view high scores")
 })
+
+goBackButton.addEventListener("click", function() { 
+  document.getElementById("initialInput").value = ("") 
+  resetVariables()
+  codeQuizChallenge();
+})
+
+clearHighScore.addEventListener("click", function() {
+  localStorage.clear();
+  highScoreList.innerHTML = "";
+  console.log("clear scores");
+})
+
+
 
 codeQuizChallenge(); 

@@ -112,3 +112,11 @@ li {
 #highScoreList {
     padding: 0px;
 }
+
+#endButtonsEl{
+    padding: 0px;
+}
+#endButtons {
+    text-align: left;
+}
+
