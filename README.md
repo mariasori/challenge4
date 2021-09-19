@@ -6,7 +6,7 @@ This challenge required me to make a multiple choice coding quiz.  When the star
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/88404610/133936748-6fa47d42-a2cc-439d-a3ca-ec5e03d2e7fe.png)
+![image](https://user-images.githubusercontent.com/88404610/133936801-22d81ac7-f766-4d65-9d7b-fffecb7b6593.png)
 
 ## Link to Application
 
